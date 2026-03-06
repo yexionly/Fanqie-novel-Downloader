@@ -38,8 +38,8 @@ jobs:
 
       - name: 运行下载脚本
         run: |
-          # 替换成你实际的下载脚本命令，示例仅供参考
-          python download_novel.py --url "${{ inputs.novel_url }}" --path "${{ inputs.save_path }}"
+          python -m pip install --upgrade pip
+          python -m pip install --prefer-binary -r config/requirements.txt
           
       - name: 上传下载结果（可选）
         uses: actions/upload-artifact@v4
